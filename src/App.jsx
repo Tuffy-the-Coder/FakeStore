@@ -3,10 +3,11 @@ import Navbar from "./Components/Navbar.jsx"
 import Footer from './Components/Footer.jsx'
 import './App.css'
 import { Routes, Route } from 'react-router-dom'
-import Home from './Components/Home.jsx'
-import About from './Components/About.jsx'
-import Products from './Components/Products.jsx'
-import Cart from './Components/Cart.jsx'
+import Home from './pages/Home.jsx'
+import About from './pages/About.jsx'
+import Products from './pages/Products.jsx'
+import Cart from './pages/Cart.jsx'
+import Item from './pages/Item.jsx'
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/About" element={<About/>} />
         <Route path="/Products" element={<Products/>} />
         <Route path="/Cart" element={<Cart/>} />
+        <Route path="/Item/:id" element={<Item/>} />
       </Routes>
       <Footer />
     </>

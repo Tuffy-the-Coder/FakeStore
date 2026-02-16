@@ -1,12 +1,8 @@
-import Home from "./Home"
-import About from "./About"
-import Products from "./Products"
-import Cart from "./Cart"
 import { Link } from "react-router-dom"
 
 function Navbar() {
     return (
-        <div className="flex justify-between p-2 bg-gradient-to-br from-gray-800 to-black text-amber-100 w-full">
+        <div className="flex justify-between p-2 bg-gradient-to-br from-gray-800 to-black text-amber-100 w-full sticky top-0">
             <h2 className="text-2xl">FakeStore</h2>
             <div className="justify-between flex gap-7">
                 <Link to="/">
