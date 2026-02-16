@@ -9,9 +9,9 @@ function useFetchProducts(url) {
 const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        console.log("using useEffect");
+        // console.log("using useEffect");
         if (cache) {
-            console.log("using cache to fetch...");
+            // console.log("using cache to fetch...");
             setProducts(cache);
             return;
         }

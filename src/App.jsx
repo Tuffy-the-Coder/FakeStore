@@ -5,7 +5,7 @@ import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
-import Products from './pages/Products.jsx'
+import Products from './Components/Products.jsx'
 import Cart from './pages/Cart.jsx'
 import Item from './pages/Item.jsx'
 
