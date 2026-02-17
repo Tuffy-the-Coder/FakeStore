@@ -16,7 +16,7 @@ function Home() {
                 rating={item.rating} />
         ))
     return (
-        <div className="bg-gradient-to-br from-gray-800 to-slate-950 gap-5 flex flex-wrap p-5 justify-evenly">
+        <div className="gap-5 flex flex-wrap p-5 justify-evenly">
             {items}
         </div>
     )

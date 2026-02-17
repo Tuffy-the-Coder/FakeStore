@@ -20,7 +20,7 @@ function Item() {
     console.log(item);
 
     return (
-        <div className="bg-gradient-to-br from-gray-800 to-slate-950 p-5 flex flex-wrap justify-evenly h-full">
+        <div className="p-5 flex flex-wrap justify-evenly h-full">
             <img
                 src={item[0].image}
                 alt={item[0].title}

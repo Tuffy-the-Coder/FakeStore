@@ -15,6 +15,7 @@ function App() {
 
   return (
     <>
+    <div className="bg-gradient-to-br from-gray-800 to-slate-950">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home/>} />
@@ -24,6 +25,7 @@ function App() {
         <Route path="/Item/:id" element={<Item/>} />
       </Routes>
       <Footer />
+      </div>
     </>
   )
 }
