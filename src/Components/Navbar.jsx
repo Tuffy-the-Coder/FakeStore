@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import { IoCartOutline } from "react-icons/io5";
 
 function Navbar() {
     return (
@@ -17,7 +18,10 @@ function Navbar() {
                     <button className="h-10 w-20 cursor-pointer hover:border-amber-50 hover:border-2 active:scale-90 active:border-amber-200">Products</button>
                 </Link>
                 <Link to="/Cart">
-                    <button className="h-10 w-20 cursor-pointer hover:border-amber-50 hover:border-2 active:scale-90 active:border-amber-200">Cart</button>
+                    <div classname="relative">
+                        <span className="absolute right-10 top-3 text-white font-bold text-1.5xl font-[calibri]">0</span>
+                        <button className="h-10 w-20 text-[2.5rem] flex justify-center items-center cursor-pointer hover:border-amber-50 hover:border-2 active:scale-90 active:border-amber-200"><IoCartOutline className="" /></button>
+                    </div>
                 </Link>
             </div>
         </div>
