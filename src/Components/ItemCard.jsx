@@ -1,10 +1,20 @@
-import { CiStar } from "react-icons/ci";
-import { FaStar } from "react-icons/fa";
-import { FaStarHalfAlt } from "react-icons/fa";
 import RatingStars from "./RatingStars";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../App";
+
 
 function ItemCard(props) {
+    
+    const { cartItems, setCartItems } = useContext(CartContext);
+    function updateCart() {
+        const copyCart = [...cartItems];
+        copyCart.push(props)
+        setCartItems(copyCart);
+        // console.log(cartItems);
+
+    }
+
     return (
         <>
 
@@ -32,7 +42,9 @@ function ItemCard(props) {
 
                 <div className="p-2 flex justify-between ">
                     <button className="w-25 h-7 bg-orange-400 rounded-2xl  font-['Calibri'] cursor-pointer hover:opacity-70 active:scale-90 active:opacity-60">Buy Now</button>
-                    <button className="w-25 h-7 bg-yellow-300 rounded-2xl font-['Calibri'] cursor-pointer hover:opacity-70 active:scale-90 active:opacity-60">Add to Cart</button>
+                    <button className="w-25 h-7 bg-yellow-300 rounded-2xl font-['Calibri'] cursor-pointer hover:opacity-70 active:scale-90 active:opacity-60"
+                            onClick={updateCart}
+                    >Add to Cart</button>
                 </div>
 
             </div >

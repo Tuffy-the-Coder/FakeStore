@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom"
 import { IoCartOutline } from "react-icons/io5";
+import { useContext } from "react";
+import { CartContext } from "../App";
 
 function Navbar() {
+    const {cartItems, setCartItems} = useContext(CartContext);
+    // console.log(cartItems);
     return (
         <div className="flex justify-between p-2 bg-gradient-to-br from-gray-800 to-black text-amber-100 w-full sticky top-0">
             <h2 className="text-2xl">FakeStore</h2>
@@ -18,8 +22,8 @@ function Navbar() {
                     <button className="h-10 w-20 cursor-pointer hover:border-amber-50 hover:border-2 active:scale-90 active:border-amber-200">Products</button>
                 </Link>
                 <Link to="/Cart">
-                    <div className="relative">
-                        <span className="absolute right-8.25 top-1 text-yellow-300 font-semibold text-[1rem] font-[calibri]">0</span>
+                    <div className="relative h-10 w-20">
+                        <span className="absolute left-[2.4rem] top-[0.4rem] text-white font-semibold text-[0.8rem] font-[calibri]">{cartItems.length}</span>
                         <button className="h-10 w-20 text-[2.5rem] flex justify-center items-center cursor-pointer hover:border-amber-50 hover:border-2 active:scale-90 active:border-amber-200"><IoCartOutline className="" /></button>
                     </div>
                 </Link>

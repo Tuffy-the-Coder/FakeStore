@@ -4,7 +4,7 @@ let cache = null;
 
 function useFetchProducts(url) {
 
-    console.log("fetching data...");
+    // console.log("fetching data...");
 
 const [products, setProducts] = useState([]);
 

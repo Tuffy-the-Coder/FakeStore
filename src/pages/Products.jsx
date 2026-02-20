@@ -2,6 +2,7 @@ import ItemCard from "../Components/ItemCard"
 import useFetchProducts from "../CustomHooks/useFetchProducts"
 import Dropdown from "../Components/dropdown";
 import { useState } from "react";
+import Loading from "./Loading";
 
 
 function Products() {
@@ -30,8 +31,9 @@ function Products() {
         return 0;
     })
     // console.log(filteredList);
+
     if (!products.length) {
-        return <p>Loading </p>
+        return <Loading />
     }
 
     return (
