@@ -2,7 +2,7 @@ import ItemCard from "../Components/ItemCard"
 import useFetchProducts from "../CustomHooks/useFetchProducts"
 
 function Home() {
-    const [products] = useFetchProducts("https://fakestoreapi.com/products");
+    const [products, setProducts] = useFetchProducts("https://fakestoreapi.com/products");
 
     const items = products.map(item => (
             <ItemCard

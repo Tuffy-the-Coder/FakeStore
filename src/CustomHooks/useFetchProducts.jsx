@@ -23,7 +23,7 @@ const [products, setProducts] = useState([]);
         }
         getData();
     },[url])
-    return [products];
+    return [products, setProducts];
 }
 
 

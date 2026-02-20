@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import RatingStars from "../Components/RatingStars"
 import useFetchProducts from "../CustomHooks/useFetchProducts"
 import { RiArrowDropDownLine } from "react-icons/ri";
+import Dropdown from "../Components/dropdown";
 
 function Item() {
 
@@ -33,22 +34,16 @@ function Item() {
                 </p>
 
                 <div className=" text-yellow-300 text-[1.3rem] flex items-center gap-1">
-                    <RatingStars rating={item[0].rating} />
+                <RatingStars rating={item[0].rating} />
                     ({item[0].rating.count})
                 </div>
-                <div className="flex relative hover:opacity-80">
-                    <span className="absolute top-0.5 left-3 text-white text-2xl pointer-events-none">
-                        Qty:
-                    </span>
-                    <select className="w-40 h-10 pl-15 bg-gray-900 border border-gray-700 text-white text-2xl rounded-lg appearance-none focus:border-amber-500 outline-none cursor-pointer">
-                        <option value={1}>1</option>
-                        <option value={2}>2</option>
-                        <option value={3}>3</option>
-                        <option value={4}>4</option>
-                        <option value={5}>5</option>
-                    </select>
-                    <RiArrowDropDownLine className="absolute left-31 top-1 pointer-events-none text-white text-4xl" />
-                </div>
+                <Dropdown placeholder={"QTY :"} options={["1","2","3","4","5"]} 
+                            ContainerStyle={"flex relative hover:opacity-80"}
+                            placeholderStyle={"absolute top-0.5 left-3 text-white text-2xl pointer-events-none"}
+                            selectStyle={"w-40 h-10 pl-20 bg-gray-900 border border-gray-700 text-white text-2xl rounded-lg appearance-none focus:border-amber-500 outline-none cursor-pointer"}
+                            iconStyle={"absolute left-31 top-1 pointer-events-none text-white text-4xl"}
+                />
+
                 <div className="flex flex-col  gap-3 justify-between">
                     <button className="w-100 h-12 bg-orange-400 text-3xl rounded-2xl  font-['Calibri'] cursor-pointer hover:opacity-70 active:scale-90 active:opacity-60">Buy Now</button>
                     <button className="w-100 h-12 bg-yellow-300 text-3xl rounded-2xl font-['Calibri'] cursor-pointer hover:opacity-70 active:scale-90 active:opacity-60">Add to Cart</button>
