@@ -18,12 +18,8 @@ function Navbar() {
                     <button className="h-10 w-20 cursor-pointer hover:border-amber-50 hover:border-2 active:scale-90 active:border-amber-200">Products</button>
                 </Link>
                 <Link to="/Cart">
-                    <div classname="relative">
-<<<<<<< HEAD
-                        <span className="absolute right-[41px] top-3 text-yellow-300 font-semibold text-[1rem] font-[calibri]">0</span>
-=======
-                        <span className="absolute right-10 top-3 text-white font-bold text-1.5xl font-[calibri]">0</span>
->>>>>>> 680e63b753d6ce34b999c3a68f271c3ecefc49bb
+                    <div className="relative">
+                        <span className="absolute right-8.25 top-1 text-yellow-300 font-semibold text-[1rem] font-[calibri]">0</span>
                         <button className="h-10 w-20 text-[2.5rem] flex justify-center items-center cursor-pointer hover:border-amber-50 hover:border-2 active:scale-90 active:border-amber-200"><IoCartOutline className="" /></button>
                     </div>
                 </Link>

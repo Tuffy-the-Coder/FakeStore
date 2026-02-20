@@ -1,5 +1,4 @@
 import ItemCard from "../Components/ItemCard"
-import { Link } from "react-router-dom";
 import useFetchProducts from "../CustomHooks/useFetchProducts"
 
 function Home() {
