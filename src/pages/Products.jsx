@@ -16,7 +16,20 @@ function Products() {
         }
         return item.category == category.toLowerCase();
     })
-    console.log(filteredList);
+
+    const sortedList = [...filteredList].sort((a,b) => {
+        if (sorting === "Rating") {
+            return b.rating.rate - a.rating.rate;
+        }
+        if (sorting === "Price : Low to High") {
+            return a.price - b.price;
+        }
+        if (sorting === "Price : High to Low") {
+            return b.price - a.price;
+        }
+        return 0;
+    })
+    // console.log(filteredList);
     if (!products.length) {
         return <p>Loading </p>
     }
@@ -47,7 +60,7 @@ function Products() {
 
             </div>
             <div className="gap-5 flex flex-wrap p-5 justify-evenly">
-                {filteredList.map(item => (
+                {sortedList.map(item => (
                     <ItemCard
                         key={item.id}
                         title={item.title}
