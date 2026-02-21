@@ -11,23 +11,25 @@ import Item from './pages/Item.jsx'
 import { createContext } from 'react'
 
 function App() {
-  
+
   const [cartItems, setCartItems] = useState([]);
 
   return (
     <>
-    <div className="bg-gradient-to-br from-gray-800 to-slate-950">
-      <CartContext.Provider value={{cartItems, setCartItems}}>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/About" element={<About/>} />
-        <Route path="/Products" element={<Products/>} />
-        <Route path="/Cart" element={<Cart/>} />
-        <Route path="/Item/:id" element={<Item/>} />
-      </Routes>
-      </CartContext.Provider>
-      <Footer />
+      <div className="flex flex-col min-h-screen">
+        <CartContext.Provider value={{ cartItems, setCartItems }}>
+          <Navbar />
+          <main className="flex-grow">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/About" element={<About />} />
+              <Route path="/Products" element={<Products />} />
+              <Route path="/Cart" element={<Cart />} />
+              <Route path="/Item/:id" element={<Item />} />
+            </Routes>
+          </main>
+          <Footer />
+        </CartContext.Provider>
       </div>
     </>
   )

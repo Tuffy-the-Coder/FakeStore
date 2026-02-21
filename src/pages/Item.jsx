@@ -12,16 +12,16 @@ function Item() {
     const [quantity, setQuantity] = useState(1);
     const [products] = useFetchProducts("https://fakestoreapi.com/products");
     const params = useParams();
-
     // console.log(item);
     const { cartItems, setCartItems } = useContext(CartContext);
+    // console.log(context);
     function updateCart() {
         const copyCart = [...cartItems];
         for (let i = 1; i <= quantity; i++) {
             copyCart.push(item)
         }
         setCartItems(copyCart);
-        // console.log(cartItems);
+        console.log(cartItems);
 
     }
 
