@@ -1,12 +1,17 @@
-import { useContext, useRef } from "react"
+import { useContext, useState } from "react"
 import { CartContext } from "../App"
 import RatingStars from "../Components/RatingStars";
 import { Link } from "react-router-dom";
+import { FaMinus, FaPlus } from "react-icons/fa";
 
 
 function Cart() {
 
     const { cartItems, setCartItems } = useContext(CartContext);
+    // console.log(cartItems);
+    if (!cartItems.length) {
+        return <div className="flex  gap-2 justify-center items-center h-[80.5vh] text-amber-50 text-5xl">Your cart is empty</div>
+    }
     const uniqueItems = Object.values(
 
         cartItems.reduce((acc, item) => {
@@ -35,17 +40,51 @@ function Cart() {
 
         }, {})
 
-    );
+    )
+
     // console.log(uniqueItems)
 
+    function deleteItem(item) {
+        setCartItems(prev => prev.filter(cardItem => {
+            if(cardItem.id === item.id) {
+                return false;
+            }  
+            return true;
+        }))
+    }
+
+    function increaseQty(item) {
+
+        setCartItems(prev => [...prev, item]);
+    }
 
 
+    function decreaseQty(item) {
 
+  setCartItems(prev => {
 
+    let found = false;
+
+    return prev.filter(cartItem => {
+
+      if (!found && cartItem.id === item.id) {
+
+        found = true;
+        return false; // remove ONE occurrence
+
+      }
+
+      return true;
+
+    });
+
+  });
+
+}
 
     return (
         <>
-            <div className=" gap-5 flex flex-col p-5 justify-evenly">
+            <div className=" gap-5 flex flex-col p-5 justify-evenly items-center">
                 {uniqueItems.map(item => (
                     <Link to={`/Item/${item.title}`} key={item.id}>
                         <div className="w-140 h-50 flex flex-row  overflow-hidden border-2 border-amber-300 rounded-2xl  hover:border-amber-500 cursor-pointer">
@@ -66,16 +105,35 @@ function Cart() {
                                     <p className="text-amber-50 ">FREE delivery</p>
                                     <span className="text-white font-bold">{item.deliveryDate}</span>
                                 </div>
-                                <div className="flex justify-between">
-                                <div className="h-8 w-30 border-1 border-amber-400 rounded-2xl"></div>
-                                <button className="h-8 w-20 border-1 bg-red-400  rounded-2xl  font-['Calibri'] cursor-pointer hover:opacity-70 active:scale-90 active:opacity-60">Delete</button>
+                                <div className="flex justify-between mt-2">
+                                    <div className="h-8 w-30 border-2  border-amber-400 rounded-2xl text-amber-50 flex p-3 justify-between items-center hover:border-amber-600 ">
+                                        <FaMinus className="cursor-pointer"
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                e.stopPropagation();
+                                                decreaseQty(item);
+                                            }} />
+                                        <span className="text-[1.2rem] font-bold">{item.quantity}</span>
+                                        <FaPlus className="cursor-pointer"
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                e.stopPropagation();
+                                                increaseQty(item);
+                                            }} />
+                                    </div>
+                                    <button className="h-8 w-20 border bg-red-400  rounded-2xl  font-['Calibri'] cursor-pointer hover:opacity-70 active:scale-90 active:opacity-60"
+                                        onClick={(e) => {
+                                            e.preventDefault();
+                                            e.stopPropagation();
+                                            deleteItem(item);
+                                        }}>Delete</button>
                                 </div>
                             </div>
                         </div>
                     </Link>
                 ))}
             </div>
-            <div className=""></div>
+
         </>
     )
 }

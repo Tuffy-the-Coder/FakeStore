@@ -18,7 +18,7 @@ function Item() {
     function updateCart() {
         const copyCart = [...cartItems];
         for (let i = 1; i <= quantity; i++) {
-            copyCart.push(item)
+            copyCart.push(item[0])
         }
         setCartItems(copyCart);
         console.log(cartItems);
