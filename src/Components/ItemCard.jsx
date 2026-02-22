@@ -14,13 +14,19 @@ function ItemCard(props) {
         // console.log(cartItems);
 
     }
-
+    function createSlug(title) {
+  return title
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, "")
+    .replace(/\s+/g, "-");
+}
+    // console.log(props);
     return (
         <>
 
             <div className="w-80 h-88 border-2 border-amber-300 rounded-2xl flex flex-col overflow-hidden hover:border-amber-500 cursor-pointer">
                 
-                <Link to={`/Item/${props.title}`}>
+                <Link to={`/Item/${createSlug(props.title)}/${props.id}`}>
 
                     <img
                         src={props.image}

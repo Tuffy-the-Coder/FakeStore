@@ -38,26 +38,26 @@ function Products() {
 
     return (
         <>
-            <div className="flex justify-between mt-4 pl-5 pr-5">
+            <div className="flex justify-between pl-2 pr-2 mt-4">
                 <Dropdown
                     placeholder={"Sort by :"}
                     options={["Rating", "Price : Low to High", "Price : High to Low"]}
                     value={sorting}
                     onChange={setSorting}
-                    ContainerStyle={"flex relative w-60 hover:opacity-80"}
-                    placeholderStyle={"absolute top-2 left-3 text-white text-1xl pointer-events-none"}
-                    selectStyle={"w-60 h-10 pl-20 bg-gray-900 border border-gray-700 text-white text-1xl rounded-lg appearance-none focus:border-amber-500 outline-none cursor-pointer"}
-                    iconStyle={"absolute right-0 top-1 pointer-events-none text-white text-4xl"}
+                    ContainerStyle={"flex relative w-38 h-8 lg-h-10 lg:w-60 hover:opacity-80"}
+                    placeholderStyle={"absolute top-[9.5px] lg:top-1 left-3 text-white text-[0.5rem] lg:text-[1rem] pointer-events-none"}
+                    selectStyle={"w-38 lg:w-60 h-8 pl-12 lg:pl-20 bg-gray-900 border border-gray-700 text-white text-[0.5rem] lg:text-[1rem] rounded-lg appearance-none focus:border-amber-500 outline-none cursor-pointer"}
+                    iconStyle={"absolute right-0 top-1 lg:top-0 pointer-events-none text-white text-[1.5rem] lg:text-[2rem]"}
                 />
                 <Dropdown
                     placeholder={"Category :"}
                     options={["All", "Men's clothing", "Women's clothing", "Jewelery", "Electronics"]}
                     value={category}
                     onChange={setCategory}
-                    ContainerStyle={"flex relative  w-60 hover:opacity-80"}
-                    placeholderStyle={"absolute top-2 left-3 text-white text-1xl pointer-events-none"}
-                    selectStyle={"w-60 h-10 pl-22 bg-gray-900 border border-gray-700 text-white text-1xl rounded-lg appearance-none focus:border-amber-500 outline-none cursor-pointer"}
-                    iconStyle={"absolute right-0 top-1 pointer-events-none text-white text-4xl"}
+                    ContainerStyle={"flex relative w-38 h-8 lg-h-10 lg:w-60 hover:opacity-80"}
+                    placeholderStyle={"absolute top-[9.5px] lg:top-1 left-3 text-white text-[0.5rem] lg:text-[1rem] pointer-events-none"}
+                    selectStyle={"w-38 lg:w-60 h-8 pl-14 lg:pl-22 bg-gray-900 border border-gray-700 text-white text-[0.5rem] lg:text-[1rem] rounded-lg appearance-none focus:border-amber-500 outline-none cursor-pointer"}
+                    iconStyle={"absolute right-0 top-1 lg:top-0 pointer-events-none text-white text-[1.5rem] lg:text-[2rem]"}
                 />
 
             </div>

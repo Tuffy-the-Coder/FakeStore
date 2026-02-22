@@ -32,10 +32,9 @@ function Item() {
     // console.log(products);
     // console.log(params.id);
 
-    const item = products.filter(item => {
-        return item.title.trim() == params.id;
+    const item = products.filter(item => {        
+        return item.id == params.id;
     })
-
 
 
     return (

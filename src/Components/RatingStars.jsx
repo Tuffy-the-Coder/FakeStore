@@ -9,15 +9,15 @@ export default  function RatingStars({ rating }) {
   for (let i = 1; i <= 5; i++) {
 
     if (rating.rate >= i) {
-      stars.push(<FaStar key={i} />);
+      stars.push(<FaStar key={i} className="w-[0.6rem] h-[0.6rem] lg:h-[1rem] lg:w-[1rem]"/>);
     }
 
     else if (rating.rate >= i - 0.5) {
-      stars.push(<FaStarHalfAlt key={i} />);
+      stars.push(<FaStarHalfAlt key={i} className="w-[0.6rem] h-[0.6rem] lg:h-[1rem] lg:w-[1rem]"/>);
     }
 
     else {
-      stars.push(<CiStar key={i} />);
+      stars.push(<CiStar key={i} className="w-[0.6rem] h-[0.6rem] lg:h-[1rem] lg:w-[1rem]"/>);
     }
   }
 

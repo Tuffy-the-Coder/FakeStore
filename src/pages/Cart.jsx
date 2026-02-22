@@ -4,7 +4,6 @@ import RatingStars from "../Components/RatingStars";
 import { Link } from "react-router-dom";
 import { FaMinus, FaPlus } from "react-icons/fa";
 
-
 function Cart() {
 
     const { cartItems, setCartItems } = useContext(CartContext);
@@ -88,52 +87,59 @@ function Cart() {
     }, 0);
 
     // console.log(subTotal)
-
+    function createSlug(title) {
+        return title
+            .toLowerCase()
+            .replace(/[^\w\s-]/g, "")
+            .replace(/\s+/g, "-");
+    }
     return (
         <>
             <div className=" gap-5 flex flex-col p-5 justify-evenly items-center">
-                <div className="bg-amber-50 w-60 rounded-2xl flex flex-wrap gap-2 p-3 fixed right-4 top-20">
+                <div className="bg-amber-50 w-full lg:w-60 lg:h-25 text-[0.54rem] lg:text-[1rem] rounded-[6px] lg:rounded-2xl flex flex-wrap gap-[2px] lg:gap-2 p-2 lg:p-3 fixed bottom-0 lg:right-4 lg:top-20">
                     <p>Subtotal ({cartItems.length === 1 ? `${cartItems.length} item` : `${cartItems.length} items`}): </p>
                     <p className="font-bold">${subTotal.toFixed(2)}</p>
-                    <button className="w-full h-8 bg-orange-400 text-1xl rounded-2xl  font-['Calibri'] cursor-pointer hover:opacity-80 active:scale-90 active:opacity-60">Proceed to Buy</button>
+                    <button className="w-full h-5 lg:h-8 bg-orange-400 text-[0.6rem] lg:text-[1rem] rounded-2xl  font-['Calibri'] cursor-pointer hover:opacity-80 active:scale-90 active:opacity-60">
+                        Proceed to Buy
+                    </button>
                 </div>
                 {uniqueItems.map(item => (
-                    <Link to={`/Item/${item.title}`} key={item.id}>
-                        <div className="w-140 h-50 flex flex-row  overflow-hidden border-2 border-amber-300 rounded-2xl  hover:border-amber-500 cursor-pointer">
+                    <Link to={`/Item/${createSlug(item.title)}/${item.id}`} key={item.id}>
+                        <div className="w-90 h-35 lg:w-140 lg:h-55 flex flex-row  overflow-hidden border-2 border-amber-300 rounded-2xl  hover:border-amber-500 cursor-pointer">
                             <img
                                 src={item.image}
                                 alt={item.title}
-                                className="w-50 h-50 bg-amber-100 p-4 object-contain shrink-0" />
-                            <div className="p-3 gap-1 flex flex-col">
-                                <p className="text-blue-100 text-[0.9rem] line-clamp-1 font-bold">{item.title}</p>
-                                <p className="text-blue-100 text-[0.7rem] line-clamp-2">{item.description}</p>
-                                <p className="font-bold text-yellow-400 text-[1rem]">${(item.price * item.quantity).toFixed(2)}</p>
+                                className="lg:w-50 w-30 lg:h-55 h-35 bg-amber-100 p-4 object-contain shrink-0" />
+                            <div className="p-3 gap-[1px] lg:gap-1 flex flex-col">
+                                <p className="text-blue-100 text-[0.7rem] lg:text-[0.9rem] line-clamp-1 font-bold">{item.title}</p>
+                                <p className="text-blue-100 text-[0.5rem] lg:text-[0.8rem] line-clamp-2">{item.description}</p>
+                                <p className="font-bold text-yellow-400 text-[0.5rem] lg:text-[1rem]">${(item.price * item.quantity).toFixed(2)}</p>
 
-                                <div className=" text-yellow-300 text-[0.7rem] flex items-center gap-1">
+                                <div className=" text-yellow-300 text-[0.5rem] lg:text-[0.8rem] flex items-center gap-1">
                                     <RatingStars rating={item.rating} />
                                     ({item.rating.count})
                                 </div>
-                                <div className="flex gap-2 items-center text-[0.9rem]">
+                                <div className="flex gap-2 items-center text-[0.4rem] lg:text-[0.9rem]">
                                     <p className="text-amber-50 ">FREE delivery</p>
                                     <span className="text-white font-bold">{item.deliveryDate}</span>
                                 </div>
                                 <div className="flex justify-between mt-2">
-                                    <div className="h-8 w-30 border-2  border-amber-400 rounded-2xl text-amber-50 flex p-3 justify-between items-center hover:border-amber-600 ">
-                                        <FaMinus className="cursor-pointer"
+                                    <div className="h-5 w-15 lg:h-8 lg:w-30 border-2  border-amber-400 rounded-2xl text-amber-50 flex pl-1 pr-1 lg:p-3 justify-between items-center hover:border-amber-600 ">
+                                        <FaMinus className="cursor-pointer w-[0.5rem] h-[0.4rem] lg:h-[1rem] lg:w-[1rem]"
                                             onClick={(e) => {
                                                 e.preventDefault();
                                                 e.stopPropagation();
                                                 decreaseQty(item);
                                             }} />
-                                        <span className="text-[1.2rem] font-bold">{item.quantity}</span>
-                                        <FaPlus className="cursor-pointer"
+                                        <span className="text-[0.5rem] lg:text-[1.2rem] font-bold">{item.quantity}</span>
+                                        <FaPlus className="cursor-pointer w-[0.5rem] h-[0.4rem] lg:h-[1rem] lg:w-[1rem]"
                                             onClick={(e) => {
                                                 e.preventDefault();
                                                 e.stopPropagation();
                                                 increaseQty(item);
                                             }} />
                                     </div>
-                                    <button className="h-8 w-20 border bg-red-400  rounded-2xl  font-['Calibri'] cursor-pointer hover:opacity-70 active:scale-90 active:opacity-60"
+                                    <button className="w-11 h-5 lg:h-8 lg:w-20 text-[0.5rem] lg:text-[1rem] border bg-red-400  rounded-2xl  font-['Calibri'] cursor-pointer hover:opacity-70 active:scale-90 active:opacity-60"
                                         onClick={(e) => {
                                             e.preventDefault();
                                             e.stopPropagation();
