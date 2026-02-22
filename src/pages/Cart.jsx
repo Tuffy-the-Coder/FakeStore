@@ -46,9 +46,9 @@ function Cart() {
 
     function deleteItem(item) {
         setCartItems(prev => prev.filter(cardItem => {
-            if(cardItem.id === item.id) {
+            if (cardItem.id === item.id) {
                 return false;
-            }  
+            }
             return true;
         }))
     }
@@ -61,30 +61,42 @@ function Cart() {
 
     function decreaseQty(item) {
 
-  setCartItems(prev => {
+        setCartItems(prev => {
 
-    let found = false;
+            let found = false;
 
-    return prev.filter(cartItem => {
+            return prev.filter(cartItem => {
 
-      if (!found && cartItem.id === item.id) {
+                if (!found && cartItem.id === item.id) {
 
-        found = true;
-        return false; // remove ONE occurrence
+                    found = true;
+                    return false; // remove ONE occurrence
 
-      }
+                }
 
-      return true;
+                return true;
 
-    });
+            });
 
-  });
+        });
 
-}
+    }
+
+    const subTotal = cartItems.reduce((acc, item) => {
+        // console.log(acc, item.price);
+        return acc + item.price;
+    }, 0);
+
+    // console.log(subTotal)
 
     return (
         <>
             <div className=" gap-5 flex flex-col p-5 justify-evenly items-center">
+                <div className="bg-amber-50 w-60 rounded-2xl flex flex-wrap gap-2 p-3 fixed right-4 top-20">
+                    <p>Subtotal ({cartItems.length === 1 ? `${cartItems.length} item` : `${cartItems.length} items`}): </p>
+                    <p className="font-bold">${subTotal.toFixed(2)}</p>
+                    <button className="w-full h-8 bg-orange-400 text-1xl rounded-2xl  font-['Calibri'] cursor-pointer hover:opacity-80 active:scale-90 active:opacity-60">Proceed to Buy</button>
+                </div>
                 {uniqueItems.map(item => (
                     <Link to={`/Item/${item.title}`} key={item.id}>
                         <div className="w-140 h-50 flex flex-row  overflow-hidden border-2 border-amber-300 rounded-2xl  hover:border-amber-500 cursor-pointer">
@@ -95,7 +107,7 @@ function Cart() {
                             <div className="p-3 gap-1 flex flex-col">
                                 <p className="text-blue-100 text-[0.9rem] line-clamp-1 font-bold">{item.title}</p>
                                 <p className="text-blue-100 text-[0.7rem] line-clamp-2">{item.description}</p>
-                                <p className="font-bold text-yellow-400 text-[0.9rem]">${item.price}</p>
+                                <p className="font-bold text-yellow-400 text-[1rem]">${(item.price * item.quantity).toFixed(2)}</p>
 
                                 <div className=" text-yellow-300 text-[0.7rem] flex items-center gap-1">
                                     <RatingStars rating={item.rating} />
