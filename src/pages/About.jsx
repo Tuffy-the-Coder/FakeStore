@@ -1,45 +1,215 @@
-import AboutCard from "../Components/AboutCard"
+import { FaReact, FaShoppingCart, FaFilter, FaMobileAlt, FaGithub, FaLinkedin, FaYoutube, FaInstagram, FaEnvelope } from "react-icons/fa";
+import { SiTailwindcss, SiReactrouter } from "react-icons/si";
 
 
 function About() {
-    const data = [
+
+    const features = [
         {
-            id: 1,
-            title: "About the Project",
-            description: "This project was created as part of my React learning journey. Users can:",
-            list: ["Browse products", "View product details", "Add items to cart", "Explore categories"]
+            icon: <FaShoppingCart />,
+            title: "Shopping Experience",
+            desc: "Browse products, view details and manage your cart easily."
         },
         {
-            id: 2,
-            title: "Technologies Used",
-            description: "Technologies i used for creating this Project:",
-            list: ["React", "React Router", "FakeStore API", "Tailwind"]
+            icon: <FaFilter />,
+            title: "Smart Filtering",
+            desc: "Filter and sort products for better discovery."
         },
         {
-            id: 3,
-            title: "Features",
-            description: "Feature available as of now:",
-            list: ["Responsive design", "Product filtering", "Shopping cart", "Shopping cart", "Dynamic routing"]
-        },
-        
-    ]
+            icon: <FaMobileAlt />,
+            title: "Responsive Design",
+            desc: "Fully responsive across mobile, tablet and desktop."
+        }
+    ];
+
+
+    const tech = [
+        { icon: <FaReact />, name: "React" },
+        { icon: <SiReactrouter />, name: "React Router" },
+        { icon: <SiTailwindcss />, name: "Tailwind CSS" }
+    ];
+
 
     return (
 
-        <div className="flex flex-col gap-10 p-10">
+        <div className="text-white">
 
-            <div className="text-blue-200 flex flex-col gap-4 [text-shadow:_1px_1px_5px_#000]">
-                <h2 className="font-bold text-4xl">Welcome to FakeStore</h2>
-                <p>A modern React e-commerce project powered by FakeStore API.
-                    FakeStore is a demo e-commerce application built using React.
-                    It demonstrates how to fetch data from APIs, manage state, and create responsive user interfaces.
+
+            {/* Intro */}
+            <section className=" h-[300px] flex flex-col items-center justify-center bg-gradient-to-r from-amber-400 to-yellow-600 text-black p-16 text-center">
+
+                <h1 className="text-5xl font-bold">
+                    About FakeStore
+                </h1>
+
+                <p className="mt-4 max-w-2xl mx-auto text-lg">
+                    FakeStore is a modern ecommerce project built with React to
+                    demonstrate real-world frontend development skills.
                 </p>
-            </div>
 
-            <AboutCard data={data}/>
+            </section>
+
+
+
+            {/* Project Info */}
+            <section className="max-w-5xl mx-auto p-10 text-center">
+
+                <h2 className="text-3xl font-bold mb-4">
+                    The Project
+                </h2>
+
+                <p className="text-gray-300">
+                    This project was created as part of my React learning journey.
+                    It demonstrates API integration, cart management, routing,
+                    filtering and responsive UI design using modern tools.
+                </p>
+
+            </section>
+
+
+
+            {/* Features */}
+            <section className="max-w-6xl mx-auto p-10">
+
+                <h2 className="text-3xl font-bold text-center mb-10">
+                    Features
+                </h2>
+
+
+                <div className="grid md:grid-cols-3 gap-8">
+
+                    {features.map((item, index) => (
+
+                        <div
+                            key={index}
+                            className="bg-zinc-900 p-6 rounded-xl hover:scale-105 transition"
+                        >
+
+                            <div className="text-3xl text-amber-400 mb-4">
+                                {item.icon}
+                            </div>
+
+                            <h3 className="text-xl font-bold mb-2">
+                                {item.title}
+                            </h3>
+
+                            <p className="text-gray-400">
+                                {item.desc}
+                            </p>
+
+                        </div>
+
+                    ))}
+
+                </div>
+
+            </section>
+
+
+
+            {/* Tech Stack */}
+            <section className="bg-zinc-900 p-10 text-center">
+
+                <h2 className="text-3xl font-bold mb-8">
+                    Technologies Used
+                </h2>
+
+
+                <div className="flex justify-center gap-10 text-4xl">
+
+                    {tech.map((item, index) => (
+
+                        <div key={index} className="flex flex-col items-center gap-2">
+
+                            <span className="text-amber-400">
+                                {item.icon}
+                            </span>
+
+                            <span className="text-sm">
+                                {item.name}
+                            </span>
+
+                        </div>
+
+                    ))}
+
+                </div>
+
+            </section>
+
+
+
+            {/* About me */}
+            <section className="max-w-4xl mx-auto p-10 text-center">
+
+                <h2 className="text-3xl font-bold mb-4 text-white">
+                    Developer
+                </h2>
+
+                <p className="text-gray-400 mb-6">
+                    Hi, I'm the developer of FakeStore. This project was built using React,
+                    Tailwind, and FakeStore API to practice real-world ecommerce development.
+                </p>
+
+
+                {/* Links */}
+                <div className="flex justify-center gap-6 text-3xl">
+
+                    <a
+                        href="https://github.com/Tuffy-the-Coder"
+                        target="_blank"
+                        className="text-white hover:text-gray-400 hover:scale-125 transition"
+                    >
+                        <FaGithub />
+                    </a>
+
+
+                    <a
+                        href="https://linkedin.com/"
+                        target="_blank"
+                        className="text-white hover:text-blue-400 hover:scale-125 transition"
+                    >
+                        <FaLinkedin />
+                    </a>
+
+
+                    <a
+                        href="https://youtube.com/@Tuffy_the_Coder"
+                        target="_blank"
+                        className="text-white hover:text-red-500 hover:scale-125 transition"
+                    >
+                        <FaYoutube />
+                    </a>
+
+
+                    <a
+                        href="https://instagram.com/anuragrwt.exe"
+                        target="_blank"
+                        className="text-white hover:text-pink-500 hover:scale-125 transition"
+                    >
+                        <FaInstagram />
+                    </a>
+
+
+                    <a
+                        href="mailto:rawat123anurag@gmail.com"
+                        target="_blank"
+                        className="text-white hover:text-amber-400 hover:scale-125 transition"
+                    >
+                        <FaEnvelope />
+                    </a>
+
+                </div>
+
+
+
+            </section>
+
 
         </div>
-    )
+
+    );
+
 }
 
-export default About
+export default About;
