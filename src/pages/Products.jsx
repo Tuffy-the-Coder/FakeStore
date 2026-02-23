@@ -45,8 +45,8 @@ function Products() {
                     value={sorting}
                     onChange={setSorting}
                     ContainerStyle={"flex relative w-38 h-8 lg-h-10 lg:w-60 hover:opacity-80"}
-                    placeholderStyle={"absolute top-[9.5px] lg:top-1 left-3 text-white text-[0.5rem] lg:text-[1rem] pointer-events-none"}
-                    selectStyle={"w-38 lg:w-60 h-8 pl-12 lg:pl-20 bg-gray-900 border border-gray-700 text-white text-[0.5rem] lg:text-[1rem] rounded-lg appearance-none focus:border-amber-500 outline-none cursor-pointer"}
+                    placeholderStyle={"absolute top-[8.5px] lg:top-1 left-2 text-white text-[0.6rem] lg:text-[1rem] pointer-events-none"}
+                    selectStyle={"w-38 lg:w-60 h-8 pl-12 lg:pl-20 bg-gray-900 border border-gray-700 text-white text-[0.6rem] lg:text-[1rem] rounded-lg appearance-none focus:border-amber-500 outline-none cursor-pointer"}
                     iconStyle={"absolute right-0 top-1 lg:top-0 pointer-events-none text-white text-[1.5rem] lg:text-[2rem]"}
                 />
                 <Dropdown
@@ -54,10 +54,10 @@ function Products() {
                     options={["All", "Men's clothing", "Women's clothing", "Jewelery", "Electronics"]}
                     value={category}
                     onChange={setCategory}
-                    ContainerStyle={"flex relative w-38 h-8 lg-h-10 lg:w-60 hover:opacity-80"}
-                    placeholderStyle={"absolute top-[9.5px] lg:top-1 left-3 text-white text-[0.5rem] lg:text-[1rem] pointer-events-none"}
-                    selectStyle={"w-38 lg:w-60 h-8 pl-14 lg:pl-22 bg-gray-900 border border-gray-700 text-white text-[0.5rem] lg:text-[1rem] rounded-lg appearance-none focus:border-amber-500 outline-none cursor-pointer"}
-                    iconStyle={"absolute right-0 top-1 lg:top-0 pointer-events-none text-white text-[1.5rem] lg:text-[2rem]"}
+                    ContainerStyle={"flex relative w-39 h-8 lg-h-10 lg:w-60 hover:opacity-80"}
+                    placeholderStyle={"absolute top-[8.5px] lg:top-1 left-2 text-white text-[0.6rem] lg:text-[1rem] pointer-events-none"}
+                    selectStyle={"w-38 lg:w-60 h-8 pl-14 lg:pl-22 bg-gray-900 border border-gray-700 text-white text-[0.6rem] lg:text-[1rem] rounded-lg appearance-none focus:border-amber-500 outline-none cursor-pointer"}
+                    iconStyle={"absolute right-1 top-1 lg:top-0 pointer-events-none text-white text-[1.5rem] lg:text-[2rem]"}
                 />
 
             </div>
