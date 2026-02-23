@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import RatingStars from "../Components/RatingStars"
 import useFetchProducts from "../CustomHooks/useFetchProducts"
 import Dropdown from "../Components/dropdown";
@@ -32,7 +32,7 @@ function Item() {
     // console.log(products);
     // console.log(params.id);
 
-    const item = products.filter(item => {        
+    const item = products.filter(item => {
         return item.id == params.id;
     })
 
@@ -64,7 +64,9 @@ function Item() {
                 />
 
                 <div className="flex flex-col  gap-3 justify-between">
-                    <button className="w-100 h-12 bg-orange-400 text-3xl rounded-2xl  font-['Calibri'] cursor-pointer hover:opacity-70 active:scale-90 active:opacity-60">Buy Now</button>
+                    <Link to={`/Checkout/DeliveryDetails`} className="w-full">
+                        <button className="w-100 h-12 bg-orange-400 text-3xl rounded-2xl  font-['Calibri'] cursor-pointer hover:opacity-70 active:scale-90 active:opacity-60">Buy Now</button>
+                    </Link>
                     <button className="w-100 h-12 bg-yellow-300 text-3xl rounded-2xl font-['Calibri'] cursor-pointer hover:opacity-70 active:scale-90 active:opacity-60"
                         onClick={updateCart}
                     >Add to Cart</button>

@@ -47,7 +47,11 @@ function ItemCard(props) {
                 </Link>
 
                 <div className="p-2 flex justify-between ">
-                    <button className="w-25 h-7 bg-orange-400 rounded-2xl  font-['Calibri'] cursor-pointer hover:opacity-70 active:scale-90 active:opacity-60">Buy Now</button>
+                    <Link to={`/Checkout/DeliveryDetails`}>
+                    <button className="w-25 h-7 bg-orange-400 rounded-2xl  font-['Calibri'] cursor-pointer hover:opacity-70 active:scale-90 active:opacity-60">
+                        Buy Now
+                        </button>
+                    </Link>
                     <button className="w-25 h-7 bg-yellow-300 rounded-2xl font-['Calibri'] cursor-pointer hover:opacity-70 active:scale-90 active:opacity-60"
                             onClick={updateCart}
                     >Add to Cart</button>
