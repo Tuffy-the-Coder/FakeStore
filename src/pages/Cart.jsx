@@ -99,7 +99,7 @@ function Cart() {
                 <div className="bg-amber-50 w-full lg:w-60 lg:h-25 text-[0.54rem] lg:text-[1rem] rounded-[6px] lg:rounded-2xl flex flex-wrap gap-[2px] lg:gap-2 p-2 lg:p-3 fixed bottom-0 lg:right-4 lg:top-20">
                     <p>Subtotal ({cartItems.length === 1 ? `${cartItems.length} item` : `${cartItems.length} items`}): </p>
                     <p className="font-bold">${subTotal.toFixed(2)}</p>
-                    <Link to={`/Checkout/${subTotal.toFixed(2)}`} className="w-full">
+                    <Link to={`/Checkout/DeliveryDetails`} className="w-full">
                     <button className="w-full h-5 lg:h-8 bg-orange-400 text-[0.6rem] lg:text-[1rem] rounded-2xl  font-['Calibri'] cursor-pointer hover:opacity-80 active:scale-90 active:opacity-60">
                         Proceed to Buy
                     </button>
