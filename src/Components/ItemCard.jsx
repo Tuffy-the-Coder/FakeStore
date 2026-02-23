@@ -38,7 +38,7 @@ function ItemCard(props) {
                         <p className="font-bold text-yellow-400 text-[1rem]">${props.price}</p>
 
                         <div className=" text-yellow-300 text-[0.8rem] flex items-center gap-1">
-                            <RatingStars rating={props.rating} />
+                            <RatingStars rating={props.rating} size={"w-[1rem] h-[1rem]"}/>
                             ({props.rating.count})
                         </div>
 

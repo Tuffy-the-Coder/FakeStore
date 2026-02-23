@@ -120,7 +120,7 @@ function Cart() {
                                 <p className="font-bold text-yellow-400 text-[0.5rem] lg:text-[1rem]">${(item.price * item.quantity).toFixed(2)}</p>
 
                                 <div className=" text-yellow-300 text-[0.5rem] lg:text-[0.8rem] flex items-center gap-1">
-                                    <RatingStars rating={item.rating} />
+                                    <RatingStars rating={item.rating} size={"w-[0.6rem] h-[0.6rem] lg:h-[1rem] lg:w-[1rem]"}/>
                                     ({item.rating.count})
                                 </div>
                                 <div className="flex gap-2 items-center text-[0.4rem] lg:text-[0.9rem]">

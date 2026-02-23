@@ -214,8 +214,8 @@ export default function DeliveryDetails() {
                             setDeliveryInstructions(prev => e.target.value)
                         } />
                 </div>
-                <div className="flex justify-evenly mt-3 gap-2 ">
-                    <button className="w-40 h-10 bg-red-500 border-2 rounded-[7px] cursor-pointer hover:brightness-80 active:scale-95 active:brightness-75"
+                <div className="flex flex-wrap justify-evenly mt-3 gap-2 ">
+                    <button className="w-50 h-10 bg-red-500 border-2 rounded-[7px] cursor-pointer hover:brightness-80 active:scale-95 active:brightness-75"
                         type="button"
                         onClick={() => {
                             setDeliveryDetails(prev => ({
@@ -233,7 +233,7 @@ export default function DeliveryDetails() {
                             }))
                             setDeliveryInstructions(prev => "")
                         }}>Reset</button>
-                    <button type="submit" className="w-40 h-10 bg-green-400 border-2 rounded-[7px] cursor-pointer hover:brightness-80 active:scale-95 active:brightness-75">Payment Gateway</button>
+                    <button type="submit" className="w-50 h-10 bg-green-400 border-2 rounded-[7px] cursor-pointer hover:brightness-80 active:scale-95 active:brightness-75">Payment Gateway</button>
                 </div>
             </section>
         </form>

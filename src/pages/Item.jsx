@@ -51,7 +51,7 @@ function Item() {
                 </p>
 
                 <div className=" text-yellow-300 text-[1.3rem] flex items-center gap-1">
-                    <RatingStars rating={item[0].rating} />
+                    <RatingStars rating={item[0].rating} size={"1.3rem"}/>
                     ({item[0].rating.count})
                 </div>
                 <Dropdown placeholder={"QTY :"} options={["1", "2", "3", "4", "5"]}
