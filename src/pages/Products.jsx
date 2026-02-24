@@ -1,6 +1,6 @@
 import ItemCard from "../Components/ItemCard"
 import useFetchProducts from "../CustomHooks/useFetchProducts"
-import Dropdown from "../Components/dropdown";
+import Dropdown from "../Components/Dropdown";
 import { useState } from "react";
 import Loading from "./Loading";
 

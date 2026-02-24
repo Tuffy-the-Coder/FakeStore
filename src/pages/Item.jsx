@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import RatingStars from "../Components/RatingStars"
 import useFetchProducts from "../CustomHooks/useFetchProducts"
-import Dropdown from "../Components/dropdown";
+import Dropdown from "../Components/Dropdown";
 import { useState } from "react";
 import Loading from "./Loading";
 import { useContext } from "react";
