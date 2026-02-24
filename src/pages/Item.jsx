@@ -38,7 +38,7 @@ function Item() {
 
 
     return (
-        <div className="p-5 flex flex-wrap justify-evenly h-full">
+        <div className="p-5 flex flex-wrap justify-center lg:gap-5 h-full">
             <img
                 src={item[0].image}
                 alt={item[0].title}
