@@ -44,7 +44,7 @@ function Item() {
                 alt={item[0].title}
                 className=" w-120 h-120 object-contain bg-amber-50 rounded-2xl p-4" />
             <div className="p-1 gap-3 flex flex-col">
-                <p className="text-blue-100 text-[1.5rem] font-bold">{item[0].title}</p>
+                <p className="text-blue-100 text-[1.5rem] lg:w-120 font-bold">{item[0].title}</p>
                 <p className="text-blue-100 text-[1.3rem] lg:w-120 ">{item[0].description}</p>
                 <p className="font-bold text-yellow-400 text-[1.5rem]">
                     ${item[0].price}
