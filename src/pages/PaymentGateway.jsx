@@ -1,10 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useContext } from "react";
+import { CartContext } from "../App";
 export default function PaymentGateway() {
 
     const navigate = useNavigate();
 
     const [method, setMethod] = useState("card");
+    const { cartItems, setCartItems } = useContext(CartContext);
+
 
     const [cardDetails, setCardDetails] = useState({
         number: "",
@@ -32,6 +36,7 @@ export default function PaymentGateway() {
         }
 
         // success
+        setCartItems(prev => []);
         navigate("/");
 
     }
